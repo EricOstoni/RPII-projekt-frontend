@@ -2,10 +2,12 @@ import React from "react";
 
 // react-bootstrap components
 import { Button, Card, Form, Container, Row, Col } from "react-bootstrap";
+import Appbar from "../components/Appbar";
 
 function User() {
   return (
     <>
+    <Appbar/>
       <Container fluid>
         <Row>
           <Col>
