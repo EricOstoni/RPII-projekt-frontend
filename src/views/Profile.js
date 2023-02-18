@@ -114,9 +114,10 @@ function User() {
                         <label>Zip code</label>
                         <Form.Control
                           placeholder="ZIP Code"
-                          type="number"
+                          type="text"
                           value={zipcode}
                           onChange={(e) => SetZipcode(e.target.value)}
+                          maxLength = {5}
                         ></Form.Control>
                       </Form.Group>
                     </Col>
@@ -127,7 +128,8 @@ function User() {
                         <label>Broj plinomijera</label>
                         <Form.Control
                           placeholder="Broj plinomijera"
-                          type="number"
+                          type="text"
+                          maxLength={8}
                           value={broj_plinomjera}
                           onChange={(e) => SetBroj_plinomjera(e.target.value)}
                         ></Form.Control>
