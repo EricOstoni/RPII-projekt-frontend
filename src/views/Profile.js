@@ -6,8 +6,8 @@ import { Button, Card, Form, Container, Row, Col } from "react-bootstrap";
 import Appbar from "../components/Appbar";
 
 function User() {
-  const [name, SetName] = useState("");
-  const [address, SetAddress] = useState("");
+  const [ime, SetIme] = useState("");
+  const [adresa, SetAdresa] = useState("");
   const [prezime, SetPrezime] = useState("");
   const [grad, SetGrad] = useState("");
   const [drzava, SetDrzava] = useState("");
@@ -17,9 +17,9 @@ function User() {
 
   const handlerClick = (e) => {
     e.preventDefault();
-    const student = {
-      name,
-      address,
+    const user = {
+      ime,
+      adresa,
       prezime,
       grad,
       drzava,
@@ -27,13 +27,13 @@ function User() {
       zipcode,
       broj_plinomjera,
     };
-    console.log(student);
-    fetch("http://localhost:8080/student/add", {
+    console.log(user);
+    fetch("http://localhost:8080/user", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(student),
+      body: JSON.stringify(user),
     }).then(() => {
-      console.log("New student added");
+      console.log("New user added");
     });
   };
 
@@ -67,8 +67,8 @@ function User() {
                         <Form.Control
                           placeholder="Ime"
                           type="text"
-                          value={name}
-                          onChange={(e) => SetName(e.target.value)}
+                          value={ime}
+                          onChange={(e) => SetIme(e.target.value)}
                         ></Form.Control>
                       </Form.Group>
                     </Col>
@@ -80,8 +80,8 @@ function User() {
                         <Form.Control
                           placeholder="Kućna adresa"
                           type="text"
-                          value={address}
-                          onChange={(e) => SetAddress(e.target.value)}
+                          value={adresa}
+                          onChange={(e) => SetAdresa(e.target.value)}
                         ></Form.Control>
                       </Form.Group>
                     </Col>
@@ -117,7 +117,7 @@ function User() {
                           type="text"
                           value={zipcode}
                           onChange={(e) => SetZipcode(e.target.value)}
-                          maxLength = {5}
+                          maxLength={5}
                         ></Form.Control>
                       </Form.Group>
                     </Col>

@@ -8,6 +8,9 @@ import Table from "./views/Table.js";
 
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
+import EditUser from "./views/EditUser";
+import ViewUser from "./views/ViewUser";
+
 
 function App() {
   return (
@@ -15,6 +18,12 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/table" element={<Table />} />
+      <Route path="/edituser/:id" element={<EditUser />} />
+      <Route path="/edituser" element={<EditUser />} />
+      <Route path="/viewuser" element={<ViewUser/>} />
+      <Route path="/viewuser/:id" element={<ViewUser/>} />
+     
+
     </Routes>
   );
 }
